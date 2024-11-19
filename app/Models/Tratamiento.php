@@ -25,7 +25,7 @@ class Tratamiento extends Model
 
     public function set()
     {
-        return $this->belongsTo(Set::class)->nullable(); // Relación opcional con Set
+        return $this->belongsTo(Set::class);
     }
 
     public function resultadosEjercicio()

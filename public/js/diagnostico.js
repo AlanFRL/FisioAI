@@ -6,6 +6,24 @@ async function loadModel() {
     console.log("Modelo cargado exitosamente:", model);
 }
 
+// Validar que todos los campos estén llenos
+function validarFormulario() {
+    const peso = document.querySelector('#peso').value;
+    const altura = document.querySelector('#altura').value;
+    const zonaAfectada = document.querySelector('#zona_afectada').value;
+    const nivelDolor = document.querySelector('#nivel_dolor').value;
+    const lesionDias = document.querySelector('#lesion_dias').value;
+    const diagnostico = document.querySelector('#diagnostico').value;
+
+    const botonGuardar = document.querySelector('#btn-guardar');
+
+    if (peso && altura && zonaAfectada && nivelDolor && lesionDias && diagnostico) {
+        botonGuardar.disabled = false;
+    } else {
+        botonGuardar.disabled = true;
+    }
+}
+
 // Realizar una predicción
 async function realizarPrediccion() {
     // Obtener los valores del formulario
@@ -18,21 +36,11 @@ async function realizarPrediccion() {
     console.log("Nivel de dolor:", nivelDolor);
     console.log("Días con lesión:", lesionDias);
 
-    if (!zonaAfectada || isNaN(nivelDolor) || isNaN(lesionDias)) {
-        alert('Por favor, completa todos los campos.');
-        return;
-    }
+    if (!zonaAfectada || isNaN(nivelDolor) || isNaN(lesionDias)) return;
 
     // Mapear la zona afectada a un índice (esto debe coincidir con tu modelo)
     const zonas = ["Cadera", "Codo", "Cuello", "Espalda Baja", "Hombro", "Muslo", "Muñeca", "Pie", "Rodilla", "Tobillo"];
     const zonaIndex = zonas.indexOf(zonaAfectada);
-
-    if (zonaIndex === -1) {
-        alert('Zona afectada inválida.');
-        return;
-    }
-
-    console.log("Índice de zona afectada:", zonaIndex);
 
     // Crear el tensor de entrada
     const inputTensor = tf.tensor2d([[zonaIndex, nivelDolor, lesionDias]]);
@@ -83,13 +91,16 @@ async function realizarPrediccion() {
 
     // Mostrar el resultado
     document.querySelector('#diagnostico').value = diagnosticoPredicho;
-    alert(`Diagnóstico sugerido: ${diagnosticoPredicho}`);
+    validarFormulario();
 }
 
 // Cargar el modelo al cargar la página
 document.addEventListener('DOMContentLoaded', loadModel);
 
 // Asociar el botón al evento de predicción
-document.querySelectorAll('#nivel_dolor, #lesion_dias, #zona_afectada').forEach(element => {
-    element.addEventListener('change', realizarPrediccion);
+document.querySelectorAll('#peso, #altura, #zona_afectada, #nivel_dolor, #lesion_dias').forEach(el => {
+    el.addEventListener('input', () => {
+        validarFormulario();
+        realizarPrediccion();
+    });
 });

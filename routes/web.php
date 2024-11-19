@@ -26,14 +26,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/diagnostico', [DiagnosticoController::class, 'index'])->name('diagnostico');
-    Route::post('/diagnostico', [DiagnosticoController::class, 'predict'])->name('diagnostico.predict');
-
     Route::resource('diagnosticos', DiagnosticoController::class);
+
+    // Rutas dinámicas para ejercicios
+    Route::get('/ejercicios/{nombre}/{ejercicioId}/{tratamientoId}', [EjerciciosController::class, 'ejercicio'])
+        ->name('ejercicios.dinamico');
 
     Route::get('/ejercicios_muneca', [EjerciciosController::class, 'muneca'])->name('ejercicios_muneca');
 
-    Route::fallback(function() {
+    Route::fallback(function () {
         return view('pages/utility/404');
-    });    
+    });
 });

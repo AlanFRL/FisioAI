@@ -13,12 +13,19 @@ class ResultadoEjercicio extends Model
 
     protected $fillable = [
         'tratamiento_id',
+        'ejercicio_id',
         'porcentaje_precision',
         'observaciones',
+        'fecha',
     ];
 
     public function tratamiento()
     {
         return $this->belongsTo(Tratamiento::class);
+    }
+
+    public function ejercicio()
+    {
+        return $this->belongsTo(Ejercicio::class);
     }
 }
