@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tratamiento', function (Blueprint $table) {
+        Schema::create('set_ejercicio', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('diagnostico_id')->constrained('diagnostico')->onDelete('cascade');
-            $table->foreignId('set_id')->constrained('set')->onDelete('cascade')->nullable();
-            $table->date('fecha_inicio')->nullable();
-            $table->date('fecha_final')->nullable();
+            $table->foreignId('set_id')->constrained('set')->onDelete('cascade');
+            $table->foreignId('ejercicio_id')->constrained('ejercicio')->onDelete('cascade');
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tratamiento');
+        Schema::dropIfExists('set_ejercicio');
     }
 };

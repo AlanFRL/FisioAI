@@ -2,34 +2,81 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diagnostico;
+use App\Models\Tratamiento;
 use Illuminate\Http\Request;
 
 class DiagnosticoController extends Controller
 {
     public function index()
     {
-        return view('pages.diagnostico.index');
+        // Obtén los diagnósticos del usuario autenticado
+        $diagnosticos = Diagnostico::where('user_id', auth()->id())->get();
+        //$diagnosticos = Diagnostico::all();
+        return view('pages.planes.index', compact('diagnosticos'));
     }
 
-    public function predict(Request $request)
+    public function create()
     {
-        $zona = $request->input('zona_afectada');
-        $dolor = $request->input('dolor_actual');
-        $duracion = $request->input('duracion_dolor');
-
-        // Aquí llamas a tu modelo (por ejemplo, vía Python o API)
-        $resultado = $this->callPythonModel($zona, $dolor, $duracion);
-
-        return view('pages.diagnostico.result', compact('resultado'));
+        return view('pages.planes.create');
     }
 
-    private function callPythonModel($zona, $dolor, $duracion)
+    public function store(Request $request)
     {
-        // Aquí puedes llamar al script de Python
-        // Puedes usar `shell_exec` o una API si el modelo está en un servidor.
-        $command = escapeshellcmd("python predict_model.py $zona $dolor $duracion");
-        $output = shell_exec($command);
+        $request->validate([
+            'peso' => 'required|numeric|min:1|max:300',
+            'altura' => 'required|integer|min:50|max:250',
+            'zona_afectada' => 'required|string|max:255',
+            'nivel_dolor' => 'required|integer|min:1|max:10',
+            'lesion_dias' => 'required|integer|min:0',
+            'lesion_previa' => 'required|boolean',
+            'diagnostico' => 'required|string|max:255',
+        ]);
 
-        return json_decode($output, true); // Suponiendo que el modelo retorna JSON
+        // Crear un nuevo diagnóstico y asignar cada campo
+        $diagnostico = new Diagnostico();
+        $diagnostico->user_id = auth()->id(); // Asigna el ID del usuario autenticado
+        $diagnostico->peso = $request->input('peso');
+        $diagnostico->altura = $request->input('altura');
+        $diagnostico->zona_afectada = $request->input('zona_afectada');
+        $diagnostico->nivel_dolor = $request->input('nivel_dolor');
+        $diagnostico->lesion_dias = $request->input('lesion_dias');
+        $diagnostico->lesion_previa = $request->input('lesion_previa');
+        $diagnostico->diagnostico = $request->input('diagnostico');
+        $diagnostico->save(); // Guarda el registro en la base de datos
+
+        return redirect()->route('diagnosticos.index')->with('success', 'Diagnóstico creado exitosamente.');
+    }
+
+    public function show(Diagnostico $diagnostico)
+    {
+        return view('pages.planes.show', compact('diagnostico'));
+    }
+
+    public function edit(Diagnostico $diagnostico)
+    {
+        return view('pages.planes.edit', compact('diagnostico'));
+    }
+
+    public function update(Request $request, Diagnostico $diagnostico)
+    {
+        $request->validate([
+            'zona_afectada' => 'required|string|max:255',
+            'nivel_dolor' => 'required|integer|min:1|max:10',
+            'lesion_dias' => 'required|integer|min:0',
+            'lesion_previa' => 'required|boolean',
+            'diagnostico' => 'required|string|max:255',
+        ]);
+
+        $diagnostico->update($request->all());
+
+        return redirect()->route('diagnosticos.index')->with('success', 'Diagnóstico actualizado exitosamente.');
+    }
+
+    public function destroy(Diagnostico $diagnostico)
+    {
+        $diagnostico->delete();
+
+        return redirect()->route('diagnosticos.index')->with('success', 'Diagnóstico eliminado exitosamente.');
     }
 }

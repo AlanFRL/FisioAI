@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('diagnostico', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->float('peso', 5, 2);
+            $table->integer('altura');
             $table->string('zona_afectada');
             $table->integer('nivel_dolor');
             $table->integer('lesion_dias');
