@@ -1,11 +1,11 @@
 <x-authentication-layout>
-    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('Create your Account') }} ✨</h1>
+    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('Crea tu Cuenta') }} ✨</h1>
     <!-- Form -->
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="space-y-4">
             <div>
-                <x-jet-label for="name">{{ __('Full Name') }} <span class="text-rose-500">*</span></x-jet-label>
+                <x-jet-label for="name">{{ __('Nombre Completo') }} <span class="text-rose-500">*</span></x-jet-label>
                 <x-jet-input id="name" type="text" name="name" :value="old('name')" required autofocus
                     autocomplete="name" />
             </div>
@@ -18,17 +18,17 @@
             </div>
 
             <div>
-                <x-jet-label for="email">{{ __('Email Address') }} <span class="text-rose-500">*</span></x-jet-label>
+                <x-jet-label for="email">{{ __('Correo') }} <span class="text-rose-500">*</span></x-jet-label>
                 <x-jet-input id="email" type="email" name="email" :value="old('email')" required />
             </div>
 
             <div>
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div>
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
                 <x-jet-input id="password_confirmation" type="password" name="password_confirmation" required
                     autocomplete="new-password" />
             </div>
@@ -37,11 +37,11 @@
             <div class="mr-1">
                 <label class="flex items-center" name="newsletter" id="newsletter">
                     <input type="checkbox" class="form-checkbox" />
-                    <span class="text-sm ml-2">Email me about product news.</span>
+                    <span class="text-sm ml-2">Recordar Contraseña.</span>
                 </label>
             </div>
             <x-jet-button>
-                {{ __('Sign Up') }}
+                {{ __('Registrarse') }}
             </x-jet-button>
         </div>
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -64,8 +64,8 @@
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-slate-200">
         <div class="text-sm">
-            {{ __('Have an account?') }} <a class="font-medium text-indigo-500 hover:text-indigo-600"
-                href="{{ route('login') }}">{{ __('Sign In') }}</a>
+            {{ __('¿Tienes una cuenta?') }} <a class="font-medium text-indigo-500 hover:text-indigo-600"
+                href="{{ route('login') }}">{{ __('Ingresar') }}</a>
         </div>
     </div>
 </x-authentication-layout>

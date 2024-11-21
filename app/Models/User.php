@@ -10,6 +10,9 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @method \Illuminate\Database\Eloquent\Collection diagnosticos()
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -49,6 +52,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'fecha_nacimiento' => 'date', // Agregamos esta línea
     ];
 
     /**

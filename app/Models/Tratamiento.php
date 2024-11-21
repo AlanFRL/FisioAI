@@ -18,6 +18,12 @@ class Tratamiento extends Model
         'fecha_final',
     ];
 
+    // Convierte las columnas de fecha a instancias de Carbon
+    protected $casts = [
+        'fecha_inicio' => 'datetime',
+        'fecha_final' => 'datetime',
+    ];
+
     public function diagnostico()
     {
         return $this->belongsTo(Diagnostico::class);

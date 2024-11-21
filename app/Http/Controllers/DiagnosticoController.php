@@ -55,7 +55,7 @@ class DiagnosticoController extends Controller
             'diagnostico_id' => $diagnostico->id,
             'set_id' => $set ? $set->id : null,
             'fecha_inicio' => now(),
-            'fecha_final' => now()->addDays(10),
+            'fecha_final' => now()->addDays(9),
         ]);
 
         return redirect()->route('diagnosticos.index')->with('success', 'Plan creado exitosamente.');
