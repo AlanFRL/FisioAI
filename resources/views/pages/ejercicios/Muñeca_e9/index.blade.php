@@ -75,7 +75,7 @@
             <div class="bg-white p-6 rounded-lg shadow flex justify-center items-center">
                 <!-- Video (oculto) -->
                 <video id="input_video" class="input_video hidden" autoplay muted playsinline></video>
-                <!-- Canvas (visible) -->
+                <!-- Canvas (visible)  -->
                 <canvas id="output_canvas" class="output_canvas w-full rounded-lg shadow-lg" width="640"
                     height="480">></canvas>
             </div>
