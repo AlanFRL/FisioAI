@@ -11,6 +11,10 @@ class EjerciciosController extends Controller
 
         return view('pages.ejercicios.muneca.index');
     }
+    public function hombro()
+    {
 
+        return view('pages.ejercicios.hombro.index');
+    }
 
 }

@@ -32,6 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('diagnosticos', DiagnosticoController::class);
 
     Route::get('/ejercicios_muneca', [EjerciciosController::class, 'muneca'])->name('ejercicios_muneca');
+    Route::get('/ejercicios_hombro', [EjerciciosController::class, 'hombro'])->name('ejercicios_hombro');
 
     Route::fallback(function() {
         return view('pages/utility/404');
