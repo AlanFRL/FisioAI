@@ -25,7 +25,7 @@
 
             <!-- Video o GIF -->
             <div class="bg-white p-6 rounded-lg shadow flex justify-center items-center">
-                <img src="{{ asset('images/ejercicios/ejemplo2.gif') }}" alt="Ejemplo del Ejercicio"
+                <img src="{{ asset('images/ejercicios/muneca_e9.gif') }}" alt="Ejemplo del Ejercicio"
                     class="w-full rounded-lg shadow-lg" width="640" height="480">
                 <!-- Sustituye "images/example.gif" con la ruta de tu video o gif real -->
             </div>
