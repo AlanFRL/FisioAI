@@ -132,6 +132,22 @@
                         </a>
                     </li>
 
+                    <!-- SEGUIMIENTO -->
+                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                        <a class="block text-slate-200 hover:text-white truncate transition duration-150"
+                            href="{{ route('seguimiento.index') }}">
+                            <div class="flex items-center">
+                                <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                                    <path class="fill-current text-slate-400"
+                                        d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z" />
+                                    <path class="fill-current text-slate-600"
+                                        d="M12 3c-4.963 0-9 4.037-9 9s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9z" />
+                                </svg>
+                                <span class="text-sm font-medium ml-3">Seguimiento</span>
+                            </div>
+                        </a>
+                    </li>
+
                     <!-- PRUEBA EJERCICIO MUÑECA -->
                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
                         <a class="block text-slate-200 hover:text-white truncate transition duration-150"

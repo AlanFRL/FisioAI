@@ -5,6 +5,7 @@ use App\Http\Controllers\DataFeedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DiagnosticoController;
 use App\Http\Controllers\EjerciciosController;
+use App\Http\Controllers\SeguimientoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +27,18 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/diagnostico', [DiagnosticoController::class, 'index'])->name('diagnostico');
-    Route::post('/diagnostico', [DiagnosticoController::class, 'predict'])->name('diagnostico.predict');
-
     Route::resource('diagnosticos', DiagnosticoController::class);
+
+    // Rutas dinámicas para ejercicios
+    Route::get('/ejercicios/{nombre}/{ejercicioId}/{tratamientoId}', [EjerciciosController::class, 'ejercicio'])->name('ejercicios.dinamico');
+    Route::get('/guardar-resultado', [EjerciciosController::class, 'guardarResultado'])->name('guardar-resultado');
 
     Route::get('/ejercicios_muneca', [EjerciciosController::class, 'muneca'])->name('ejercicios_muneca');
     Route::get('/ejercicios_hombro', [EjerciciosController::class, 'hombro'])->name('ejercicios_hombro');
 
-    Route::fallback(function() {
+    Route::resource('seguimiento', SeguimientoController::class);
+
+    Route::fallback(function () {
         return view('pages/utility/404');
-    });    
+    });
 });

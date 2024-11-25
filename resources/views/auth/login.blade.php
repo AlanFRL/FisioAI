@@ -1,5 +1,5 @@
 <x-authentication-layout>
-    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('Welcome back!') }} ✨</h1>
+    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('¡Bienvenido de vuelta!') }} ✨</h1>
     @if (session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ session('status') }}
@@ -10,11 +10,11 @@
         @csrf
         <div class="space-y-4">
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-label for="email" value="{{ __('Correo') }}" />
                 <x-jet-input id="email" type="email" name="email" :value="old('email')" required autofocus />                
             </div>
             <div>
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" type="password" name="password" required autocomplete="current-password" />                
             </div>
         </div>
@@ -22,12 +22,12 @@
             @if (Route::has('password.request'))
                 <div class="mr-1">
                     <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
-                        {{ __('Forgot Password?') }}
+                        {{ __('¿Olvidaste la contraseña?') }}
                     </a>
                 </div>
             @endif            
             <x-jet-button class="ml-3">
-                {{ __('Sign in') }}
+                {{ __('Ingresar') }}
             </x-jet-button>            
         </div>
     </form>
@@ -35,7 +35,7 @@
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-slate-200">
         <div class="text-sm">
-            {{ __('Don\'t you have an account?') }} <a class="font-medium text-indigo-500 hover:text-indigo-600" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+            {{ __('¿No tienes una cuenta?') }} <a class="font-medium text-indigo-500 hover:text-indigo-600" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
         </div>
         <!-- Warning -->
         <div class="mt-5">
@@ -44,7 +44,7 @@
                     <path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z" />
                 </svg>
                 <span class="text-sm">
-                    To support you during the pandemic super pro features are free until March 31st.
+                    Optimiza tu rendimiento, acelera tu recuperación.
                 </span>
             </div>
         </div>

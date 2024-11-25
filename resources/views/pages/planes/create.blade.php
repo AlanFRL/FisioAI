@@ -8,9 +8,6 @@
                 <label for="peso" class="block text-sm font-medium text-gray-700">Peso (kg)</label>
                 <input type="number" step="0.01" id="peso" name="peso" class="form-input mt-1 block w-full"
                     placeholder="Ej: 70.5" required>
-                @error('peso')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
 
             <!-- Altura -->
@@ -18,9 +15,6 @@
                 <label for="altura" class="block text-sm font-medium text-gray-700">Altura (cm)</label>
                 <input type="number" id="altura" name="altura" class="form-input mt-1 block w-full"
                     placeholder="Ej: 175" required>
-                @error('altura')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
             <!-- Zona Afectada -->
             <div class="mb-4">
@@ -38,9 +32,6 @@
                     <option value="Pie">Pie</option>
                     <option value="Muslo">Muslo</option>
                 </select>
-                @error('zona_afectada')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
 
             <!-- Nivel de Dolor -->
@@ -48,9 +39,6 @@
                 <label for="nivel_dolor" class="block text-sm font-medium text-gray-700">Nivel de Dolor (1-10)</label>
                 <input type="number" id="nivel_dolor" name="nivel_dolor" class="form-input mt-1 block w-full" min="1"
                     max="10" placeholder="Ej: 7" required>
-                @error('nivel_dolor')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
 
             <!-- Días con la Lesión -->
@@ -58,11 +46,9 @@
                 <label for="lesion_dias" class="block text-sm font-medium text-gray-700">Días con la Lesión</label>
                 <input type="number" id="lesion_dias" name="lesion_dias" class="form-input mt-1 block w-full"
                     placeholder="Ej: 15" required>
-                @error('lesion_dias')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
 
+            <!-- ¿Lesión Previa? -->
             <div class="mb-4">
                 <label for="lesion_previa" class="block text-sm font-medium text-gray-700">¿Lesión Previa?</label>
                 <select name="lesion_previa" id="lesion_previa" class="form-select mt-1 block w-full">
@@ -70,16 +56,15 @@
                     <option value="0">No</option>
                 </select>
             </div>
-            <!-- Campo de Diagnóstico (rellenado automáticamente) -->
+            <!-- Diagnóstico -->
             <div class="mb-4">
                 <label for="diagnostico" class="block text-sm font-medium text-gray-700">Diagnóstico</label>
                 <textarea id="diagnostico" name="diagnostico" rows="3" class="form-textarea mt-1 block w-full"
                     placeholder="Diagnóstico sugerido" readonly required></textarea>
-                @error('diagnostico')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
             </div>
-            <button type="submit" class="btn bg-indigo-500 hover:bg-indigo-600 text-white">
+
+            <!-- Botón de Guardar -->
+            <button type="submit" id="btn-guardar" class="btn bg-indigo-500 hover:bg-indigo-600 text-white" disabled>
                 Guardar Diagnóstico
             </button>
         </form>
