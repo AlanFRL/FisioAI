@@ -75,7 +75,7 @@ holistic.onResults(results => {
     const handsDetected = (rightHandLandmarks ? 1 : 0) + (leftHandLandmarks ? 1 : 0);
     if (handsDetected > 1) {
         warningMessage.style.display = 'block';
-        showVisualMessage("Utiliza solo una mano.", "error");
+        // showVisualMessage("Utiliza solo una mano.", "error");
         return;
     } else {
         warningMessage.style.display = 'none';
@@ -88,19 +88,30 @@ holistic.onResults(results => {
         const elbow = isRightHand ? poseLandmarks[14] : poseLandmarks[13];
         const wrist = isRightHand ? poseLandmarks[16] : poseLandmarks[15];
         const shoulder = isRightHand ? poseLandmarks[12] : poseLandmarks[11];
+        const shoulderRight =  poseLandmarks[12] ;
+        const shoulderLeft =  poseLandmarks[11] ;
 
         // Dibujar conexiones manualmente
         canvasCtx.beginPath();
-        canvasCtx.moveTo(shoulder.x * canvasElement.width, shoulder.y * canvasElement.height);
-        canvasCtx.lineTo(elbow.x * canvasElement.width, elbow.y * canvasElement.height);
-        canvasCtx.lineTo(wrist.x * canvasElement.width, wrist.y * canvasElement.height);
+        if(isRightHand){
+            canvasCtx.moveTo(shoulderLeft.x * canvasElement.width, shoulderLeft.y * canvasElement.height);
+            canvasCtx.lineTo(shoulderRight.x * canvasElement.width, shoulderRight.y * canvasElement.height);
+            canvasCtx.lineTo(elbow.x * canvasElement.width, elbow.y * canvasElement.height);
+        }else{
+            canvasCtx.moveTo(shoulderRight.x * canvasElement.width, shoulderRight.y * canvasElement.height);
+            canvasCtx.lineTo(shoulderLeft.x * canvasElement.width, shoulderLeft.y * canvasElement.height);
+            canvasCtx.lineTo(elbow.x * canvasElement.width, elbow.y * canvasElement.height);
+        }
+        // canvasCtx.moveTo(shoulder.x * canvasElement.width, shoulder.y * canvasElement.height);
+        // canvasCtx.lineTo(elbow.x * canvasElement.width, elbow.y * canvasElement.height);
+        // canvasCtx.lineTo(wrist.x * canvasElement.width, wrist.y * canvasElement.height);
         
         canvasCtx.strokeStyle = '#00FF00';
         canvasCtx.lineWidth = 4;
         canvasCtx.stroke();
 
         // Dibujar puntos
-        [elbow, wrist, shoulder].forEach(point => {
+        [elbow, wrist, shoulderRight,shoulderLeft].forEach(point => {
             canvasCtx.beginPath();
             canvasCtx.arc(point.x * canvasElement.width, point.y * canvasElement.height, 5, 0, 2 * Math.PI);
             canvasCtx.fillStyle = '#FF0000';

@@ -43,16 +43,16 @@ class SetEjercicioSeeder extends Seeder
             ],
             "Hombro" => [
                 "Bursitis subacromial" => [
-                    ["nombre" => "Elevaciones laterales asistidas", "descripcion" => "Ejercicio para mejorar la movilidad en el hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "No levantar el brazo por encima del nivel del hombro."],
-                    ["nombre" => "Rotaciones externas con banda elástica", "descripcion" => "Fortalecimiento del manguito rotador.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Mantener el codo pegado al cuerpo."],
+                    ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
                 "Tendinitis del manguito rotador" => [
-                    ["nombre" => "Estiramiento de hombro cruzado", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
-                    ["nombre" => "Elevaciones frontales con mancuerna", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
+                    ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
                 "Luxación de hombro" => [
-                    ["nombre" => "Isométricos del hombro", "descripcion" => "Contracciones controladas para fortalecer sin movimiento.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar forzar movimientos si hay dolor."],
-                    ["nombre" => "Rotaciones internas asistidas", "descripcion" => "Movimientos suaves para recuperar rango de movimiento.", "duracion" => 2, "repeticiones" => 12, "precauciones" => "Realizar movimientos lentos y controlados."],
+                    ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
             ],
             "Codo" => [
@@ -61,12 +61,12 @@ class SetEjercicioSeeder extends Seeder
                     ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
                 ],
                 "Epitrocleitis (Codo de golfista)" => [
-                    ["nombre" => "Rotaciones de antebrazo con banda", "descripcion" => "Fortalecimiento de rotadores del antebrazo.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "No realizar movimientos bruscos."],
-                    ["nombre" => "Extensión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de extensores del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Realizar movimientos lentos."],
+                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
                 ],
                 "Bursitis olecraneana severa" => [
-                    ["nombre" => "Ejercicios isométricos del codo", "descripcion" => "Fortalecimiento sin movimiento articular.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar si hay inflamación activa."],
-                    ["nombre" => "Extensiones controladas del codo", "descripcion" => "Mejora de la movilidad con movimientos suaves.", "duracion" => 2, "repeticiones" => 12, "precauciones" => "Evitar forzar el rango de movimiento."],
+                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
                 ],
             ],
             "Tobillo" => [

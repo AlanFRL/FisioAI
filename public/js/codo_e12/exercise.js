@@ -75,7 +75,7 @@ holistic.onResults(results => {
     const handsDetected = (rightHandLandmarks ? 1 : 0) + (leftHandLandmarks ? 1 : 0);
     if (handsDetected > 1) {
         warningMessage.style.display = 'block';
-        showVisualMessage("Utiliza solo una mano.", "error");
+        // showVisualMessage("Utiliza solo una mano.", "error");
         return;
     } else {
         warningMessage.style.display = 'none';
