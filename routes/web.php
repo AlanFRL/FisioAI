@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/ejercicios_muneca', [EjerciciosController::class, 'muneca'])->name('ejercicios_muneca');
     Route::get('/ejercicios_hombro', [EjerciciosController::class, 'hombro'])->name('ejercicios_hombro');
 
-    Route::resource('seguimiento', SeguimientoController::class);
+    Route::resource('/seguimiento', SeguimientoController::class)->names('seguimiento');;
 
     Route::fallback(function () {
         return view('pages/utility/404');
