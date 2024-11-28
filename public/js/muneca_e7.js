@@ -1,4 +1,4 @@
-import { calculatePrecision, showVisualMessage, calculateWristFlexion } from './munecahelpers_e7.js';
+import { calculatePrecision, showVisualMessage, calculateWristFlexion } from './helpers.js';
 
 const videoElement = document.getElementById('input_video');        //Entrada de Video
 const canvasElement = document.getElementById('output_canvas');     //Aquí se dibujan los frames y puntos

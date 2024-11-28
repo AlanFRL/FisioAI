@@ -111,16 +111,16 @@ class SetEjercicioSeeder extends Seeder
 
             "Cuello" => [
                 "Distensión muscular cervical" => [
-                    ["nombre" => "Estiramiento de cuello lateral", "descripcion" => "Alivia la tensión en los músculos del cuello.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Realizar movimientos suaves y sin rebotes."],
-                    ["nombre" => "Rotaciones controladas de cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
                 "Latigazo cervical" => [
-                    ["nombre" => "Retracción cervical", "descripcion" => "Ejercicio para alinear la columna cervical.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Realizar frente a un espejo para evitar posiciones incorrectas."],
-                    ["nombre" => "Estiramiento de trapecios", "descripcion" => "Reduce la tensión en los trapecios superiores.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar forzar el estiramiento más allá del rango cómodo."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
                 "Tortícolis severa" => [
-                    ["nombre" => "Movilización activa de cuello", "descripcion" => "Movimientos suaves para recuperar movilidad.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar realizar si causa dolor agudo."],
-                    ["nombre" => "Estiramiento lateral asistido", "descripcion" => "Ejercicio para reducir la rigidez del cuello.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Hacerlo con asistencia si hay limitación de movimiento."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
             ],
             "Pie" => [
