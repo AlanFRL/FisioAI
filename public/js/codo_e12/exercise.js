@@ -113,7 +113,7 @@ holistic.onResults(results => {
 
         // Validar posición inicial
         if (!exerciseStarted) {
-            if ( angle > 60) {
+            if ( angle > 50) {
                 keypointsDetected++;
                 if (keypointsDetected >= 60) { // 5 segundos de detección continua
                     exerciseStarted = true;
@@ -127,16 +127,19 @@ holistic.onResults(results => {
 
         if (exerciseStarted) {
             // Detectar flexión
-            if (angle > 60) {
+            if (angle > 50) {
                 keypointsDetected++;
-                if (keypointsDetected >= 240) { // 20 segundos de detección continua
-                    correctReps++;
+                correctReps++;
+                if (keypointsDetected >= 100) { // 20 segundos de detección continua
+                    
                     currentReps++;
+                    keypointsDetected = 0;
+                    showVisualMessage("Repetición Correcta.");
                     repetitionsDisplay.textContent = currentReps;
-                }else{
-                    incorrectReps++;
                 }
             
+            } else{
+                incorrectReps++;
             }
            
                 // lastRepTime = currentTime;
