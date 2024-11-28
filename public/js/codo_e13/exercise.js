@@ -117,8 +117,8 @@ holistic.onResults(results => {
                 keypointsDetected++;
                 if (keypointsDetected >= 60) { // 5 segundos de detección continua
                     exerciseStarted = true;
-                    exerciseMessage.textContent = 'Ejercicio iniciado.';
-                    showVisualMessage("Ejercicio iniciado.");
+                    exerciseMessage.textContent = 'Ejercicio iniciado. Proceda con las repeticiones.';
+                    showVisualMessage("Ejercicio iniciado. Proceda con las repeticiones.");
                 }
             } else {
                 keypointsDetected = 0;
@@ -127,27 +127,43 @@ holistic.onResults(results => {
 
         if (exerciseStarted) {
             // Detectar flexión
-            if (angle > 60) {
-                keypointsDetected++;
-                if (keypointsDetected >= 240) { // 20 segundos de detección continua
-                    correctReps++;
-                    currentReps++;
-                    repetitionsDisplay.textContent = currentReps;
-                }else{
-                    incorrectReps++;
-                }
-            
+            if (angle > 84 && !isFlexing) {
+                isFlexing = true;
+                isDescending = false;
             }
-           
-                // lastRepTime = currentTime;
+            if (isFlexing && angle < 65) {
+                isDescending = true; // Detecta que el ángulo descendió correctamente
+            }
+        
+            if (angle > 84 && isFlexing && isDescending) {
+                const currentTime = Date.now();     //Obtiene el tiempo actual
+
+                // Evaluar tiempo entre repeticiones
+                if (lastRepTime !== null) {
+                    const elapsedTime = (currentTime - lastRepTime) / 1000; // En segundos
+                    timeBetweenReps.push(elapsedTime);
+
+                    if (elapsedTime < 2) {
+                        incorrectReps++;
+                        showVisualMessage("Repetición muy rápida.", "error");
+                    } else if (elapsedTime > 5) {
+                        incorrectReps++;
+                        showVisualMessage("Repetición muy lenta.", "error");
+                    } else {
+                        correctReps++;
+                    }
+                } else {
+                    correctReps++; // Primera repetición siempre se considera correcta
+                }
+                lastRepTime = currentTime;
 
 
 
                 // Actualizar repetición y serie
-                
-                // repetitionsDisplay.textContent = currentReps;
-                // isFlexing = false;
-                // isDescending = false;
+                currentReps++;
+                repetitionsDisplay.textContent = currentReps;
+                isFlexing = false;
+                isDescending = false;
 
                 // Verificar si se completaron las repeticiones de la serie
                 if (currentReps >= totalReps) {
@@ -174,9 +190,9 @@ holistic.onResults(results => {
                         showVisualMessage(`Serie completada. Prepárate para la serie ${currentSeries + 1}`);
                     }
                 }
-            
+            }
         }
-    
+
 
     }
 });
