@@ -37,7 +37,7 @@ export function isInInitialPosition(shoulder, elbow, wrist) {
  * @param {Object} wrist - Coordenadas de la muñeca {x, y}.
  */
 export function countRepetitions(elbow, wrist, repetitionDisplay) {
-    // repetitionDisplay.textContent = `Repeticiones: entra`;
+    
     const calculateDistance = (pointA, pointB) => {
         return Math.sqrt(Math.pow(pointB.x - pointA.x, 2) + Math.pow(pointB.y - pointA.y, 2));
     };

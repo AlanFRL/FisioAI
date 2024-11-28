@@ -47,7 +47,7 @@ class SetEjercicioSeeder extends Seeder
                 ],
                 "Tendinitis del manguito rotador" => [
                     ["nombre" => "Estiramiento de hombro cruzado", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
-                    ["nombre" => "Elevaciones frontales con banda elástica", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
+                    ["nombre" => "Elevaciones frontales con mancuerna", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
                 "Luxación de hombro" => [
                     ["nombre" => "Isométricos del hombro", "descripcion" => "Contracciones controladas para fortalecer sin movimiento.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar forzar movimientos si hay dolor."],
