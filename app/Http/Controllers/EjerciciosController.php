@@ -15,8 +15,12 @@ class EjerciciosController extends Controller
 
         return view('pages.ejercicios.muneca.index');
     }
+    public function hombro()
+    {
 
-    // FUNCIÓN PARA IR A LA VISTA DE REALIZACIÓN DEL EJERCICIO
+        return view('pages.ejercicios.hombro.index');
+    }
+
     public function ejercicio($nombre, $ejercicioId, $tratamientoId)
     {
         // Buscar el ejercicio
@@ -83,4 +87,6 @@ class EjerciciosController extends Controller
             return 'El ejercicio se realizó correctamente con una alta precisión.';
         }
     }
+
+
 }
