@@ -58,15 +58,15 @@ class SetEjercicioSeeder extends Seeder
             "Codo" => [
                 "Epicondilitis lateral (Codo de tenista)" => [
                     ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 1, "precauciones" => "Evitar estirar más allá del rango cómodo."],
-                    ["nombre" => "Flexión de muñeca", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
+                    ["nombre" => "Flexión de muñeca", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 2, "repeticiones" => 9, "precauciones" => "Usar una mancuerna ligera."],
                 ],
                 "Epitrocleitis (Codo de golfista)" => [
-                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar estirar más allá del rango cómodo."],
-                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
+                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 1, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 2, "repeticiones" => 9, "precauciones" => "Usar una mancuerna ligera."],
                 ],
                 "Bursitis olecraneana severa" => [
-                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar estirar más allá del rango cómodo."],
-                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
+                    ["nombre" => "Estiramiento de extensores de codo", "descripcion" => "Estiramiento suave para aliviar tensión en el codo.", "duracion" => 2, "repeticiones" => 1, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos del antebrazo.", "duracion" => 2, "repeticiones" => 9, "precauciones" => "Usar una mancuerna ligera."],
                 ],
             ],
             "Tobillo" => [
