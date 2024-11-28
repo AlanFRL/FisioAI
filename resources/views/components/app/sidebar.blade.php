@@ -58,6 +58,7 @@
                 <ul class="mt-3">
 
                     <!-- Dashboard -->
+                    <!--
                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['dashboard'])){{ 'bg-slate-900' }}@endif"
                         x-data="{ open: {{ in_array(Request::segment(1), ['dashboard']) ? 1 : 0 }} }">
                         <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['dashboard'])){{ 'hover:text-slate-200' }}@endif"
@@ -78,7 +79,6 @@
                                     <span
                                         class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Dashboard</span>
                                 </div>
-                                <!-- Icon -->
                                 <div
                                     class="flex shrink-0 ml-2 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                     <svg class="w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 @if(in_array(Request::segment(1), ['dashboard'])){{ 'rotate-180' }}@endif"
@@ -115,6 +115,7 @@
                             </ul>
                         </div>
                     </li>
+                -->
 
                     <!-- DIAGNÓSTICO -->
                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
@@ -149,6 +150,7 @@
                     </li>
 
                     <!-- PRUEBA EJERCICIO MUÑECA -->
+                    <!--
                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
                         <a class="block text-slate-200 hover:text-white truncate transition duration-150"
                             href="{{ route('ejercicios_muneca') }}">
@@ -163,6 +165,7 @@
                             </div>
                         </a>
                     </li>
+                -->
 
                     <!-- PARA MILENKA -->
 

@@ -28,16 +28,17 @@ class SetEjercicioSeeder extends Seeder
             ],
             "Muñeca" => [
                 "Tendinitis de muñeca" => [
-                    ["nombre" => "Flexión de muñeca con mancuerna", "descripcion" => "Fortalecimiento de músculos flexores de la muñeca.", "duracion" => 3, "repeticiones" => 12, "precauciones" => "Usar una mancuerna ligera."],
-                    ["nombre" => "Estiramiento de extensores de muñeca", "descripcion" => "Estiramiento suave para aliviar tensión.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Estiramiento de extensores de muñeca con peso", "descripcion" => "Estiramiento de extensores para mejora de flexibilidad.", "duracion" => 2, "repeticiones" => 5, "precauciones" => "Evitar estirar hasta sentir dolor."],
                 ],
                 "Esguince de muñeca" => [
-                    ["nombre" => "Flexión y extensión de muñeca con banda", "descripcion" => "Ejercicio suave con banda elástica para movilidad.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Asegurarse de no provocar dolor."],
-                    ["nombre" => "Rotaciones de muñeca", "descripcion" => "Ejercicio para aumentar la movilidad articular.", "duracion" => 2, "repeticiones" => 12, "precauciones" => "Realizar movimientos lentos y controlados."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Estiramiento de extensores de muñeca con peso", "descripcion" => "Estiramiento de extensores para mejora de flexibilidad.", "duracion" => 2, "repeticiones" => 5, "precauciones" => "Evitar estirar hasta sentir dolor."],
                 ],
                 "Impacto carpiano agudo" => [
-                    ["nombre" => "Isométricos de muñeca", "descripcion" => "Ejercicio para fortalecer sin movimiento.", "duracion" => 3, "repeticiones" => 3, "precauciones" => "Evitar realizar si hay dolor agudo."],
-                    ["nombre" => "Elevaciones de muñeca con resistencia", "descripcion" => "Fortalecimiento gradual con mancuerna.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Usar pesos ligeros al inicio."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
                 ],
             ],
             "Hombro" => [

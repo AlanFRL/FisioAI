@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->float('peso', 5, 2);
-            $table->integer('altura');
+            $table->integer('altura')->unsigned();
             $table->string('zona_afectada');
-            $table->integer('nivel_dolor');
-            $table->integer('lesion_dias');
+            $table->integer('nivel_dolor')->unsigned();
+            $table->integer('lesion_dias')->unsigned();
             $table->boolean('lesion_previa')->default(false);
             $table->string('diagnostico');
             $table->timestamps();
