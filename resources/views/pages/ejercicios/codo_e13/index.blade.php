@@ -87,5 +87,5 @@
         data-guardar-ruta="{{ route('guardar-resultado') }}" data-serie="{{ $ejercicio->duracion }}" data-rep="{{ $ejercicio->repeticiones }}">
     </div>
 
-    <script type="module" src="{{ asset('js/codo_e19/exercise.js') }}"></script>
+    <script type="module" src="{{ asset('js/codo_e13/exercise.js') }}"></script>
 </x-app-layout>

@@ -1,5 +1,4 @@
-// import { isInInitialPosition } from './calculo.js';
-import { isInInitialPosition,calculatePrecision, showVisualMessage} from './helpers.js';
+import { calculatePrecision, showVisualMessage, calculateWristFlexion } from './helpers.js';
 
 const videoElement = document.getElementById('input_video');        //Entrada de Video
 const canvasElement = document.getElementById('output_canvas');     //Aquí se dibujan los frames y puntos
@@ -43,6 +42,7 @@ totalRepsDisplay.textContent = totalReps;
 
 // Control de precisión y flujo
 let isFlexing = false;      // Estado para evitar múltiples conteos de una flexión
+let isDescending = false;
 let cameraActive = false;
 let exerciseStarted = false; // Indica si el ejercicio ha comenzado oficialmente
 let keypointsDetected = 0; // Contador para validar la posición inicial correcta
@@ -75,7 +75,7 @@ holistic.onResults(results => {
     const handsDetected = (rightHandLandmarks ? 1 : 0) + (leftHandLandmarks ? 1 : 0);
     if (handsDetected > 1) {
         warningMessage.style.display = 'block';
-        showVisualMessage("Utiliza solo una mano.", "error");
+        // showVisualMessage("Utiliza solo una mano.", "error");
         return;
     } else {
         warningMessage.style.display = 'none';
@@ -88,37 +88,37 @@ holistic.onResults(results => {
         const elbow = isRightHand ? poseLandmarks[14] : poseLandmarks[13];
         const wrist = isRightHand ? poseLandmarks[16] : poseLandmarks[15];
         const shoulder = isRightHand ? poseLandmarks[12] : poseLandmarks[11];
+        const fingerTip = isRightHand ? hand[8] : hand[8];
 
         // Dibujar conexiones manualmente
         canvasCtx.beginPath();
         canvasCtx.moveTo(shoulder.x * canvasElement.width, shoulder.y * canvasElement.height);
         canvasCtx.lineTo(elbow.x * canvasElement.width, elbow.y * canvasElement.height);
         canvasCtx.lineTo(wrist.x * canvasElement.width, wrist.y * canvasElement.height);
-        
+        canvasCtx.lineTo(fingerTip.x * canvasElement.width, fingerTip.y * canvasElement.height);
         canvasCtx.strokeStyle = '#00FF00';
         canvasCtx.lineWidth = 4;
         canvasCtx.stroke();
 
         // Dibujar puntos
-        [elbow, wrist, shoulder].forEach(point => {
+        [shoulder,elbow, wrist, fingerTip].forEach(point => {
             canvasCtx.beginPath();
             canvasCtx.arc(point.x * canvasElement.width, point.y * canvasElement.height, 5, 0, 2 * Math.PI);
             canvasCtx.fillStyle = '#FF0000';
             canvasCtx.fill();
         });
 
-        // const angle = calculateWristFlexion(elbow, wrist, fingerTip);
-        // angleDisplay.textContent = `${angle.toFixed(2)}`; // Mostrar ángulo
+        const angle = calculateWristFlexion(elbow, wrist, fingerTip);
+        angleDisplay.textContent = `${angle.toFixed(2)}`; // Mostrar ángulo
 
         // Validar posición inicial
         if (!exerciseStarted) {
-            if (isInInitialPosition(shoulder,elbow,wrist))
-            {
+            if ( angle > 60) {
                 keypointsDetected++;
                 if (keypointsDetected >= 60) { // 5 segundos de detección continua
                     exerciseStarted = true;
-                    exerciseMessage.textContent = 'Ejercicio iniciado. Proceda con las repeticiones.';
-                    showVisualMessage("Ejercicio iniciado. Proceda con las repeticiones.");
+                    exerciseMessage.textContent = 'Ejercicio iniciado.';
+                    showVisualMessage("Ejercicio iniciado.");
                 }
             } else {
                 keypointsDetected = 0;
@@ -126,42 +126,28 @@ holistic.onResults(results => {
         }
 
         if (exerciseStarted) {
-            const calculateDistance = (pointA, pointB) => {
-                return Math.sqrt(Math.pow(pointB.x - pointA.x, 2) + Math.pow(pointB.y - pointA.y, 2));
-            };
             // Detectar flexión
-            const currentDistance = calculateDistance(elbow, wrist);
-            if (currentDistance < 0.2 && !isFlexing) {
-                isFlexing = true;
-            }
-            if (currentDistance >= 0.4 && isFlexing) {
-                const currentTime = Date.now();     //Obtiene el tiempo actual
-
-                // Evaluar tiempo entre repeticiones
-                if (lastRepTime !== null) {
-                    const elapsedTime = (currentTime - lastRepTime) / 1000; // En segundos
-                    timeBetweenReps.push(elapsedTime);
-
-                    if (elapsedTime < 2) {
-                        incorrectReps++;
-                        showVisualMessage("Repetición muy rápida.", "error");
-                    } else if (elapsedTime > 5) {
-                        incorrectReps++;
-                        showVisualMessage("Repetición muy lenta.", "error");
-                    } else {
-                        correctReps++;
-                    }
-                } else {
-                    correctReps++; // Primera repetición siempre se considera correcta
+            if (angle > 60) {
+                keypointsDetected++;
+                if (keypointsDetected >= 240) { // 20 segundos de detección continua
+                    correctReps++;
+                    currentReps++;
+                    repetitionsDisplay.textContent = currentReps;
+                }else{
+                    incorrectReps++;
                 }
-                lastRepTime = currentTime;
+            
+            }
+           
+                // lastRepTime = currentTime;
 
 
 
                 // Actualizar repetición y serie
-                currentReps++;
-                repetitionsDisplay.textContent = currentReps;
-                isFlexing = false;
+                
+                // repetitionsDisplay.textContent = currentReps;
+                // isFlexing = false;
+                // isDescending = false;
 
                 // Verificar si se completaron las repeticiones de la serie
                 if (currentReps >= totalReps) {
@@ -188,9 +174,9 @@ holistic.onResults(results => {
                         showVisualMessage(`Serie completada. Prepárate para la serie ${currentSeries + 1}`);
                     }
                 }
-            }
+            
         }
-
+    
 
     }
 });
