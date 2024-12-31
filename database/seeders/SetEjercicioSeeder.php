@@ -28,31 +28,31 @@ class SetEjercicioSeeder extends Seeder
             ],
             "Muñeca" => [
                 "Tendinitis de muñeca" => [
-                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
-                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 7, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 6, "precauciones" => "Evitar estirar más allá del rango cómodo."],
                     ["nombre" => "Estiramiento de extensores de muñeca con peso", "descripcion" => "Estiramiento de extensores para mejora de flexibilidad.", "duracion" => 2, "repeticiones" => 5, "precauciones" => "Evitar estirar hasta sentir dolor."],
                 ],
                 "Esguince de muñeca" => [
-                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 7, "precauciones" => "Evitar estirar más allá del rango cómodo."],
                     ["nombre" => "Estiramiento de extensores de muñeca con peso", "descripcion" => "Estiramiento de extensores para mejora de flexibilidad.", "duracion" => 2, "repeticiones" => 5, "precauciones" => "Evitar estirar hasta sentir dolor."],
                 ],
                 "Impacto carpiano agudo" => [
-                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
-                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia abajo", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 7, "precauciones" => "Evitar estirar más allá del rango cómodo."],
+                    ["nombre" => "Flexión de muñeca hacia arriba", "descripcion" => "Flexión suave para aliviar tensión.", "duracion" => 3, "repeticiones" => 6, "precauciones" => "Evitar estirar más allá del rango cómodo."],
                 ],
             ],
             "Hombro" => [
                 "Bursitis subacromial" => [
                     ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
-                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
                 "Tendinitis del manguito rotador" => [
                     ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
-                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
                 "Luxación de hombro" => [
                     ["nombre" => "Estiramiento de hombro", "descripcion" => "Estiramiento suave para aliviar tensión en el hombro.", "duracion" => 2, "repeticiones" => 3, "precauciones" => "No forzar el brazo hacia adentro."],
-                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos rápidos o bruscos."],
+                    ["nombre" => "Elevaciones frontales", "descripcion" => "Fortalecimiento de músculos estabilizadores del hombro.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos rápidos o bruscos."],
                 ],
             ],
             "Codo" => [
@@ -111,16 +111,16 @@ class SetEjercicioSeeder extends Seeder
 
             "Cuello" => [
                 "Distensión muscular cervical" => [
-                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
-                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
                 "Latigazo cervical" => [
-                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
-                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
                 "Tortícolis severa" => [
-                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado hasta un ángulo de 45° y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
-                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 10, "precauciones" => "Evitar movimientos bruscos o rápidos."],
+                    ["nombre" => "Rotación Controlada del Cuello", "descripcion" => "Gira la cabeza hacia un lado y vuelve al centro. Repite en ambos lados.", "duracion" => 2, "repeticiones" => 8, "precauciones" => "Mantén la espalda recta y no fuerces el cuello."],
+                    ["nombre" => "Inclinación Lateral del Cuello", "descripcion" => "Mejora la movilidad articular del cuello.", "duracion" => 3, "repeticiones" => 5, "precauciones" => "Evitar movimientos bruscos o rápidos."],
                 ],
             ],
             "Pie" => [

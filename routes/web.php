@@ -37,6 +37,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/ejercicios_hombro', [EjerciciosController::class, 'hombro'])->name('ejercicios_hombro');
 
     Route::resource('/seguimiento', SeguimientoController::class)->names('seguimiento');;
+    Route::get('/reportes/progreso', [SeguimientoController::class, 'generarReporteProgreso'])->name('reportes.progreso');
+    Route::get('/reportes/adherencia', [SeguimientoController::class, 'generarReporteAdherencia'])->name('reportes.adherencia');
+
 
     Route::fallback(function () {
         return view('pages/utility/404');

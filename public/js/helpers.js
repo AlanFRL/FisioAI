@@ -62,3 +62,18 @@ export function calculateNeckRotationAngle(leftShoulder, nose, rightShoulder) {
 
     return (Math.acos(dotProduct / (magnitude1 * magnitude2)) * 180) / Math.PI;
 }
+
+export function calculateNeckInclination(leftShoulder, head, rightShoulder) {
+    const midpointX = (leftShoulder.x + rightShoulder.x) / 2;
+    const midpointY = (leftShoulder.y + rightShoulder.y) / 2;
+
+    const vector1 = [head.x - midpointX, head.y - midpointY];
+    const vector2 = [1, 0]; // Eje vertical
+
+    const dotProduct = vector1[0] * vector2[0] + vector1[1] * vector2[1];
+    const magnitude1 = Math.sqrt(vector1[0] ** 2 + vector1[1] ** 2);
+    const magnitude2 = Math.sqrt(vector2[0] ** 2 + vector2[1] ** 2);
+
+    const angle = Math.acos(dotProduct / (magnitude1 * magnitude2)) * (180 / Math.PI);
+    return angle;
+}
